@@ -60,6 +60,11 @@ class BinarySearchTreeNode:
             return self.data
         return self.right.findMax()
 
+    def findMin(self):
+        if self.left == None:
+            return self.data
+        return self.left.findMin()
+
 def build_tree(elements):
     root = BinarySearchTreeNode(elements[0])
 
@@ -74,3 +79,4 @@ if __name__ == '__main__':
     numbers_tree = build_tree(numbers)
     print(numbers_tree.in_order_traversal())
     print("Maximum element is", numbers_tree.findMax())
+    print("Minimun element is", numbers_tree.findMin())
