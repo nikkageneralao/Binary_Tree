@@ -124,7 +124,10 @@ if __name__ == '__main__':
     numbers = [1, 5, 3, 10, 34, 4, 8, 15]
     numbers_tree = build_tree(numbers)
     print(numbers_tree.in_order_traversal())
-    print("Maximum element is", numbers_tree.findMax())
+    print("\nBINARY SEARCH TREE"
+          "\n---------------------------------------------")
+    print("\nThe elements in this binary search tree are: ", "\n\t", numbers)
+    print("\nMaximum element is", numbers_tree.findMax())
     print("Minimum element is", numbers_tree.findMin())
     print("The total sum of all elements is", numbers_tree.calculateSum())
     print("Element 10 is present:", numbers_tree.search(10))
@@ -133,4 +136,20 @@ if __name__ == '__main__':
     print("Pre Order Traversal:", numbers_tree.pre_order_traversal())
     numbers_tree.delete(10)
     print("After deleting 10:", numbers_tree.in_order_traversal())
+
+    ## For Demo
+    name = ["N", "I", "K", "K", "A", "P", "A", "U", "L", "I", "N", "E", "D",
+            "G", "E", "N", "E", "R", "A", "L", "A", "O"]
+    name_lst = str(name)[1:-1]
+    names_tree = build_tree(name)
+    print("\n---------------------------------------------")
+    print("\nThe elements in this binary search tree are: ", "\n\t", name_lst)
+    print("\nMaximum element is", names_tree.findMax())
+    print("Minimum element is", names_tree.findMin())
+    print("Element A is present:", names_tree.search("A"))
+    print("In Order Traversal: ", names_tree.in_order_traversal())
+    print("Post Order Traversal:", names_tree.post_order_traversal())
+    print("Pre Order Traversal:", names_tree.pre_order_traversal())
+    names_tree.delete("A")
+    print("After deleting A:", names_tree.in_order_traversal())
 
