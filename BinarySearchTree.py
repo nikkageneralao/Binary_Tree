@@ -55,6 +55,7 @@ class BinarySearchTreeNode:
             else:
                 return False
 
+    ## exercise 1
     def findMax(self):
         if self.right == None:
             return self.data
