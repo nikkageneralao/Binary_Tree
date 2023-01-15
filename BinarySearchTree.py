@@ -81,6 +81,15 @@ class BinarySearchTreeNode:
 
         return elements
 
+    def pre_order_traversal(self):
+        elements = [self.data]
+        if self.left:
+            elements += self.left.pre_order_traversal()
+        if self.right:
+            elements += self.right.pre_order_traversal()
+
+        return elements
+
 def build_tree(elements):
     root = BinarySearchTreeNode(elements[0])
 
@@ -98,3 +107,4 @@ if __name__ == '__main__':
     print("Minimum element is", numbers_tree.findMin())
     print("The total sum of all elements is", numbers_tree.calculateSum())
     print("Post Order Traversal: ", numbers_tree.post_order_traversal())
+    print("Pre Order Traversal: ", numbers_tree.pre_order_traversal())
