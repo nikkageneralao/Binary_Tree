@@ -55,7 +55,6 @@ class BinarySearchTreeNode:
             else:
                 return False
 
-    ## Exercise
     def findMax(self):
         if self.right == None:
             return self.data
@@ -91,27 +90,6 @@ class BinarySearchTreeNode:
 
         return elements
 
-    ## part 2
-    def delete(self, val):
-        if val < self.data:
-            if self.left:
-                self.left = self.left.delete(val)
-        elif val > self.data:
-            if self.right:
-                self.right = self.right.delete(val)
-        else:
-            if self.left is None and self.right is None:
-                return None
-            if self.left is None:
-                return self.right
-            if self.right is None:
-                return self.right
-
-            min_val = self.right.findMin()
-            self.data = min_val
-            self.right = self.right.delete(min_val)
-        return self
-
 def build_tree(elements):
     root = BinarySearchTreeNode(elements[0])
 
@@ -124,16 +102,9 @@ def build_tree(elements):
 if __name__ == '__main__':
     numbers = [1, 5, 3, 10, 34, 4, 8, 15]
     numbers_tree = build_tree(numbers)
-    print("\nBINARY SEARCH TREE"
-          "\n---------------------------------------------")
-    print("\nThe elements in this binary search tree are: ", "\n\t", numbers)
-    print("\nThe maximum element is", numbers_tree.findMax())
-    print("The minimum element is", numbers_tree.findMin())
+    print(numbers_tree.in_order_traversal())
+    print("Maximum element is", numbers_tree.findMax())
+    print("Minimum element is", numbers_tree.findMin())
     print("The total sum of all elements is", numbers_tree.calculateSum())
-    print("Element 10 is present:", numbers_tree.search(10))
-    print("In Order Traversal:", numbers_tree.in_order_traversal())
-    print("Post Order Traversal:", numbers_tree.post_order_traversal())
-    print("Pre Order Traversal:", numbers_tree.pre_order_traversal())
-    numbers_tree.delete(10)
-    print("After deleting 10:", numbers_tree.in_order_traversal())
-
+    print("Post Order Traversal: ", numbers_tree.post_order_traversal())
+    print("Pre Order Traversal: ", numbers_tree.pre_order_traversal())
