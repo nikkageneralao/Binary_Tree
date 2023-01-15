@@ -129,7 +129,6 @@ def build_tree(elements):
 if __name__ == '__main__':
     numbers = [1, 5, 3, 10, 34, 4, 8, 15]
     numbers_tree = build_tree(numbers)
-    print(numbers_tree.in_order_traversal())
     print("\nBINARY SEARCH TREE"
           "\n---------------------------------------------")
     print("\nThe elements in this binary search tree are: ", "\n\t", numbers)
