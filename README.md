@@ -1,4 +1,4 @@
-# Binary_Tree
+# Binary Tree
 
 ## Credits
 - https://www.youtube.com/watch?v=lFq5mYUWEBk
